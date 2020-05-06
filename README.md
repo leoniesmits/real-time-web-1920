@@ -76,10 +76,7 @@ Navigate to [localhost:1400](localhost:1400) in your browser to see the app.
 ### Users
 
 ## Credits
-[Guido Bouman](https://github.com/guidobouman) for live-coding   
-[Titus Wormer](https://github.com/wooorm) for rubberducking         
-[Spotify developer docs](https://developer.spotify.com/console/) for endpoints and documentation   
-[maybuzz/meesterproef-1819](https://github.com/maybuzz/meesterproef-1819) for oAuth setup   
+[Guido Bouman](https://github.com/guidobouman) for live-coding    
 
 ## License
 MIT © Leonie Smits
