@@ -18,7 +18,6 @@ The real time aspect is to do this with multiple users in a room, to make it a b
 - [Diagram](#diagram)
 - [My app](#my-app)
   - [Features](#features)
-  - [Users](#users)
   - [Getting data](#getting-data)
   - [Game](#game)
   - [Score](#score)
@@ -73,10 +72,48 @@ Navigate to [localhost:1400](localhost:1400) in your browser to see the app.
 - 3rd players watch, until game is over
 - Time progress bar runs out, each level is 10 seconds
 
-### Users
+### Getting data
+
+Originally I was going to get song data from Spotify, but OAuth was giving me a hard time. After some sad attempts to get some data, [Kris](https://github.com/kriskuiper) helped me and now I have some data from spotify locally stored. 
+
+This local data, found under `data/playlists` are some JSON files containing detailed metadata. This data is later connected to my API fetch 
+
+```
+const getTrackLyrics = function (obj) {
+    const title = obj.song;
+    const artist = obj.artists[0];
+    const url = 'https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?' +
+        querystring.stringify({
+            format: 'json',
+            apikey: api_key
+        });
+    return axios.get(url).then(res => {
+        if (res.status === 200 && 
+            res.data.message.body && 
+            res.data.message.body.lyrics) {
+                return res.data.message.body.lyrics.lyrics_body;
+            }
+        else {
+            return false;
+        }
+    }).catch(err => {
+        return err;
+    });
+};
+```
+
+This should give me tracks of the Musixmatch API, but doesn't seem to work anymore. 
+
+### Game 
+
+### Scores
 
 ## Credits
-[Guido Bouman](https://github.com/guidobouman) for live-coding    
+[Guido](https://github.com/guidobouman) for help with concept.
+[Laurens ](https://github.com/Razpudding) for ideas and iteration.
+[Kris](https://github.com/kriskuiper) for troubleshooting, explanations.
+[Robin](https://github.com/RobinStut) for Node related help.
+
 
 ## License
 MIT © Leonie Smits
