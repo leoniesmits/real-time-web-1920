@@ -35,12 +35,9 @@ git clone https://github.com/leoniesmits/real-time-web-1920.git
 ```json
 {
 "dependencies": {
-    "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.15.2",
-    "express-session": "^1.17.1",
-    "request": "^2.88.2",
     "socket.io": "^2.3.0"
   }
 } 
@@ -57,7 +54,7 @@ nodemon
 
 **4. Open the app**
 
-Navigate to [localhost:1400](localhost:1400) in your browser to see the app.
+Navigate to [localhost:4444](localhost:4444) in your browser to see the app.
 
 ## Diagram
 
